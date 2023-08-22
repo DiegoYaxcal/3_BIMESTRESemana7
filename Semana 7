@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  // Declara un arreglo de 10 edades.
+  int edades[10];
+
+  // Pide al usuario que ingrese las edades.
+  for (int i = 0; i < 10; i++) {
+    cout << "Ingrese la edad " << i + 1 << ": ";
+    cin >> edades[i];
+  }
+
+  // Ordena las edades utilizando el método de burbuja.
+  for (int i = 0; i < 9; i++) {
+    for (int j = 0; j < 9 - i; j++) {
+      if (edades[j] > edades[j + 1]) {
+        int temp = edades[j];
+        edades[j] = edades[j + 1];
+        edades[j + 1] = temp;
+      }
+    }
+  }
+
+  // Muestra el arreglo ordenado en la consola.
+  cout << "Las edades ordenadas en forma ascendente son: ";
+  for (int i = 0; i < 10; i++) {
+    cout << edades[i] << " ";
+  }
+
+  return 0;
+}
